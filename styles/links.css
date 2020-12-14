@@ -1,0 +1,392 @@
+/* Reset values */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* background image */
+body {
+  background-image: url("../Images/links.bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 80vh;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+/* overall page grid layout */
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr 3fr 1fr;
+  grid-template-areas:
+    "nav nav"
+    "main main"
+    "footer footer";
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+/* header and navigation bar */
+header {
+  grid-area: nav;
+  background-color: none;
+  min-width: 100vw;
+  height: 10vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: inline-block;
+  padding: 0px 75px;
+}
+
+.nav-links a {
+  color: white;
+  font-size: 1.7em;
+  font-weight: medium;
+  text-decoration: none;
+  transition: 300ms ease-in-out;
+}
+
+/* nav links anchor tags hover state */
+
+.nav-links a:hover {
+  color: rgb(148, 148, 148);
+}
+
+/* logo */
+
+.logo {
+  padding-left: 80px;
+  height: 100px;
+  width: auto;
+}
+
+/* active class to highlight which page is currently selected */
+
+.active {
+  border-bottom: 4px solid rgb(143, 1, 1);
+}
+
+/* main */
+
+/* main grid area */
+
+main {
+  grid-area: main;
+}
+
+/* main subgrid */
+
+main {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: repeat(3, 33.33%);
+  grid-template-areas:
+    "heading heading"
+    "amazon apple"
+    "spotify soundcloud";
+  min-height: 65vh;
+  margin: auto;
+}
+
+main a {
+  padding: 0 20px;
+}
+
+.links-heading {
+  margin-left: 80px;
+  grid-area: heading;
+  color: white;
+}
+
+.link-img {
+  height: 150px;
+  width: 350px;
+}
+
+.amazon {
+  grid-area: amazon;
+}
+
+.apple {
+  grid-area: apple;
+}
+
+.spotify {
+  grid-area: spotify;
+}
+
+.soundcloud {
+  grid-area: soundcloud;
+}
+
+span {
+  color: rgb(143, 1, 1);
+}
+
+/* footer styles */
+
+.foot-grid {
+  grid-area: footer;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 100px;
+  color: white;
+  height: 10vh;
+}
+
+footer h3 {
+  text-align: center;
+}
+
+/* Media Querys */
+
+/* 1500px */
+
+@media screen and (max-width: 1500px) {
+  /* body */
+
+  body {
+    overflow: hidden;
+  }
+
+  /* header */
+
+  header {
+    max-height: 10vh;
+  }
+
+  .navbar {
+    flex-direction: column;
+    margin: auto;
+  }
+
+  .nav-links {
+    justify-content: space-evenly;
+    padding: 0px 50px;
+    margin: 0 0;
+  }
+
+  .navbar a {
+    font-size: 1em;
+    justify-content: space-evenly;
+    padding: 0px 0px;
+    margin: 0 0;
+  }
+
+  .logo {
+    padding-right: 5em;
+  }
+
+  /* main */
+
+  /* footer */
+
+  footer {
+    margin-top: 0;
+    padding: 0px 100px;
+    color: white;
+    min-height: 10vh;
+  }
+
+  footer h3 {
+    text-align: center;
+  }
+}
+
+/* 820 */
+
+@media screen and (max-width: 880px) {
+  .nav-links {
+    justify-content: space-evenly;
+    padding: 0px 20px;
+    margin: 0 0;
+  }
+
+  .navbar a {
+    font-size: 1em;
+    justify-content: space-evenly;
+    padding: 0px 0px;
+  }
+
+  .logo {
+    padding-right: 5em;
+  }
+
+  /* main grid area */
+
+  main {
+    grid-area: main;
+    height: 60vh;
+  }
+
+  /* main subgrid */
+
+  main {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      "heading"
+      "amazon"
+      "apple"
+      "spotify"
+      "soundcloud";
+    margin: auto;
+  }
+
+  main a {
+    padding: unset;
+    margin: auto;
+  }
+
+  .links-heading {
+    margin-left: unset;
+    grid-area: heading;
+    color: white;
+    font-size: 1.4em;
+    text-align: center;
+  }
+
+  .link-img {
+    height: 80px;
+    width: 150px;
+  }
+
+  /* footer */
+
+  footer {
+    margin-top: unset;
+    padding: 0px 100px;
+    color: white;
+    min-height: 10vh;
+  }
+
+  footer h3 {
+    font-size: 1em;
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 0.7em;
+  }
+
+  footer img {
+    width: 30px;
+    height: auto;
+  }
+}
+
+/* 580px */
+
+@media screen and (max-width: 580px) {
+  /* body */
+
+  .nav-links {
+    padding: 0px 15px;
+  }
+
+  .nav-links a {
+    font-size: 0.8em;
+  }
+
+  .logo {
+    height: 50px;
+    width: auto;
+    padding-right: 5em;
+  }
+
+  /* footer */
+  footer {
+    justify-content: space-between;
+    padding: 50px;
+  }
+
+  footer h3 {
+    font-size: 0.7em;
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 0.5em;
+  }
+
+  footer img {
+    width: 20px;
+    height: auto;
+  }
+}
+
+/* 410px */
+
+@media screen and (max-width: 460px) {
+  /* main grid area */
+
+  main {
+    grid-area: main;
+    height: 60vh;
+  }
+
+  /* main subgrid */
+
+  main {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      "heading"
+      "amazon"
+      "apple"
+      "spotify"
+      "soundcloud";
+    margin: auto;
+    max-height: 100vh;
+    margin-bottom: 50px;
+  }
+
+  main a {
+    padding: 0;
+  }
+
+  .links-heading {
+    margin-left: unset;
+    grid-area: heading;
+    color: white;
+    font-size: 1em;
+  }
+
+  .link-img {
+    height: 50px;
+  }
+
+  /* footer */
+
+  footer {
+    justify-content: space-between;
+    padding: 0 50px;
+  }
+
+  footer h3 {
+    font-size: 0.7em;
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 0.5em;
+  }
+
+  footer img {
+    width: 20px;
+    height: auto;
+  }
+}
